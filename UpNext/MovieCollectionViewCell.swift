@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TODO: Setup placeholder views
 class MovieCollectionViewCell: UICollectionViewCell {
 	@IBOutlet var title: UILabel!
 	@IBOutlet var poster: UIImageView!

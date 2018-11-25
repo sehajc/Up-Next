@@ -15,7 +15,7 @@ import Foundation
 // TODO: Use the configuration API to fetch image base URL and poster sizes
 // TODO: Add region support based on the user 
 
-protocol MovieDatabaseNetworkServiceDelegate {
+protocol MovieDatabaseNetworkServiceDelegate: class {
 	func didFetchNowPlaying(movies: [Movie])
 	func didFetchTopRated(movies: [Movie])
 }
@@ -26,7 +26,7 @@ class MovieDatabaseNetworkService {
 	private let topRatedPath = "https://api.themoviedb.org/3/movie/top_rated?api_key="
 	static let imageBasePath = "https://image.tmdb.org/t/p/"
 	static let posterSizePath = "w780"
-	var delegate: MovieDatabaseNetworkServiceDelegate?
+	weak var delegate: MovieDatabaseNetworkServiceDelegate?
 	
 	func fetchNowPlaying(completion: (([Movie]?) -> Void)? = nil) {
 		guard let url = URL(string: nowPlayingPath + apiKey) else {

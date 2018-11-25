@@ -53,7 +53,6 @@ class MovieCarouselViewController: UIViewController {
 		movieWebService.fetchTopRated()
 	}
 	
-	
 	private enum DisplayMode {
 		case nowPlaying
 		case topRated

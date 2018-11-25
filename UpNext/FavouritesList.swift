@@ -36,7 +36,7 @@ struct FavouritesList {
 	}
 	
 	private static func savedFavourites() -> [Int] {
-		return defaults.array(forKey: key)  as? [Int] ?? [Int]()
+		return defaults.array(forKey: key) as? [Int] ?? [Int]()
 	}
 	
 	private static func saveFavourites(ids: [Int]) {
